@@ -1,13 +1,14 @@
+"""
+ASGI config for backend project.
+It exposes the ASGI callable as a module-level variable named ``application``.
+For more information on this file, see
+https://docs.djangoproject.com/en/5.0/howto/deployment/asgi/
+"""
+
 import os
-import sys
 
-# Path to your project directory
-path = '/home/zarinkaranikolov/fitness_backend/backend'
-if path not in sys.path:
-    sys.path.append(path)
+from django.core.asgi import get_asgi_application
 
-# Set the settings module
-os.environ['DJANGO_SETTINGS_MODULE'] = 'backend.settings'
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'backend.settings')
 
-from django.core.wsgi import get_wsgi_application
-application = get_wsgi_application()
+application = get_asgi_application()
